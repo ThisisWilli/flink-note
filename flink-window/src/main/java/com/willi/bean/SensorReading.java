@@ -1,4 +1,4 @@
-package com.willi;
+package com.willi.bean;
 
 /**
  * \* project: flink-note
