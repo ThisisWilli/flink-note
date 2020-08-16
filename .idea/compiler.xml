@@ -7,10 +7,12 @@
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
         <module name="flink-streaming-java" />
+        <module name="flink-CEP" />
         <module name="flink-window" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
+      <module name="flink-CEP" target="1.8" />
       <module name="flink-note" target="1.8" />
       <module name="flink-streaming-java" target="1.8" />
       <module name="flink-window" target="1.8" />

@@ -1,0 +1,4 @@
+workStation_1, wp1, 1000000000000, step1
+workStation_1, wp1, 1000000003000, step3
+workStation_1, wp1, 1000000005000, step1
+workStation_1, wp1, 1000000007000, step3
