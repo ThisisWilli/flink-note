@@ -28,7 +28,8 @@ under the License.
 		<module>flink-streaming-java</module>
 		<module>flink-window</module>
         <module>flink-CEP</module>
-    </modules>
+		<module>flink-connector</module>
+	</modules>
     <packaging>pom</packaging>
 
 	<name>Flink Quickstart Job</name>

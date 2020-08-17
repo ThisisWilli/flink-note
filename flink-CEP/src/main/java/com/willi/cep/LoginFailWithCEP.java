@@ -5,6 +5,8 @@ import com.willi.bean.ProcessData;
 import org.apache.flink.api.common.eventtime.WatermarkStrategy;
 import org.apache.flink.api.common.state.ListState;
 import org.apache.flink.api.common.state.ListStateDescriptor;
+import org.apache.flink.api.common.state.StateTtlConfig;
+import org.apache.flink.api.common.time.Time;
 import org.apache.flink.cep.CEP;
 import org.apache.flink.cep.PatternSelectFunction;
 import org.apache.flink.cep.PatternStream;
@@ -62,6 +64,8 @@ public class LoginFailWithCEP {
                 .withTimestampAssigner((element, recordTimestamp) -> element.getTimeStamp()));
 
 
+
+
         // 定义匹配模式
         Pattern<LogEvent, LogEvent> logFailStream = Pattern.<LogEvent>begin("step1").where(new IterativeCondition<LogEvent>() {
             @Override
@@ -86,6 +90,11 @@ public class LoginFailWithCEP {
         });
 
 
+        StateTtlConfig ttlConfig = StateTtlConfig
+                .newBuilder(Time.seconds(20))
+                .setUpdateType(StateTtlConfig.UpdateType.OnReadAndWrite)
+                .setStateVisibility(StateTtlConfig.StateVisibility.NeverReturnExpired)
+                .build();
         // 将双流进行汇总
         DataStream<LogEvent> unionStream = logStream1.union(logStream2);
 //        unionStream.print("union ");
@@ -100,10 +109,21 @@ public class LoginFailWithCEP {
                     @Override
                     public void open(Configuration parameters) throws Exception {
                         // 先创建ListState成员变量，再创建stateDescriptor
-                        station1 = getRuntimeContext().getListState(new ListStateDescriptor<LogEvent>("station1", LogEvent.class));
-                        station2 = getRuntimeContext().getListState(new ListStateDescriptor<LogEvent>("station2", LogEvent.class));
-                        station3 = getRuntimeContext().getListState(new ListStateDescriptor<LogEvent>("station3", LogEvent.class));
-                        station4 = getRuntimeContext().getListState(new ListStateDescriptor<LogEvent>("station4", LogEvent.class));
+                        ListStateDescriptor<LogEvent> d1 = new ListStateDescriptor<>("station1", LogEvent.class);
+                        d1.enableTimeToLive(ttlConfig);
+                        station1 = getRuntimeContext().getListState(d1);
+
+                        ListStateDescriptor<LogEvent> d2 = new ListStateDescriptor<>("station2", LogEvent.class);
+                        d2.enableTimeToLive(ttlConfig);
+                        station2 = getRuntimeContext().getListState(d2);
+
+                        ListStateDescriptor<LogEvent> d3 = new ListStateDescriptor<>("station3", LogEvent.class);
+                        d3.enableTimeToLive(ttlConfig);
+                        station3 = getRuntimeContext().getListState(d3);
+
+                        ListStateDescriptor<LogEvent> d4 = new ListStateDescriptor<>("station4", LogEvent.class);
+                        d4.enableTimeToLive(ttlConfig);
+                        station4 = getRuntimeContext().getListState(d4);
                     }
 
 
@@ -126,12 +146,7 @@ public class LoginFailWithCEP {
                         boolean b2 = station2.get().iterator().hasNext();
                         boolean b3 = station3.get().iterator().hasNext();
                         boolean b4 = station4.get().iterator().hasNext();
-
                         if (b1 && b2 && b3 && b4){
-//                            System.out.println("b1中的第一条数据为" + station1.get().iterator().next().toString());
-//                            System.out.println("b2中的第一条数据为" + station2.get().iterator().next().toString());
-//                            System.out.println("b3中的第一条数据为" + station3.get().iterator().next().toString());
-//                            System.out.println("b4中的第一条数据为" + station4.get().iterator().next().toString());
                             out.collect(station1.get().iterator().next());
                             removeFirstState(station1);
                             out.collect(station2.get().iterator().next());
@@ -157,10 +172,6 @@ public class LoginFailWithCEP {
                         }
                     }
                 });
-//        sortedStream.print("sort ");
-
-
-
 
         // 在事件流上应用模式，得到一个pattern stream
         PatternStream<LogEvent> patternStream = CEP.pattern(sortedStream, logFailStream);
@@ -174,6 +185,7 @@ public class LoginFailWithCEP {
                 List<LogEvent> s2 = map.get("step2");
                 List<LogEvent> s3 = map.get("step3");
                 List<LogEvent> s4 = map.get("step4");
+                System.out.println(s1.size() + s2.size() + s3.size() + s4.size());
                 return new ProcessData(
                         new Tuple2<>("step1", s1.iterator().next().getTimeStamp()),
                         new Tuple2<>("step2", s2.iterator().next().getTimeStamp()),

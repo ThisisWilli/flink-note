@@ -3,6 +3,7 @@
   <component name="ProjectModuleManager">
     <modules>
       <module fileurl="file://$PROJECT_DIR$/flink-CEP/flink-CEP.iml" filepath="$PROJECT_DIR$/flink-CEP/flink-CEP.iml" />
+      <module fileurl="file://$PROJECT_DIR$/flink-connector/flink-connector.iml" filepath="$PROJECT_DIR$/flink-connector/flink-connector.iml" />
       <module fileurl="file://$PROJECT_DIR$/flink-note.iml" filepath="$PROJECT_DIR$/flink-note.iml" />
       <module fileurl="file://$PROJECT_DIR$/flink-streaming-java/flink-streaming-java.iml" filepath="$PROJECT_DIR$/flink-streaming-java/flink-streaming-java.iml" />
       <module fileurl="file://$PROJECT_DIR$/flink-window/flink-window.iml" filepath="$PROJECT_DIR$/flink-window/flink-window.iml" />

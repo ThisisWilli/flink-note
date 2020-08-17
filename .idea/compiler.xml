@@ -9,10 +9,12 @@
         <module name="flink-streaming-java" />
         <module name="flink-CEP" />
         <module name="flink-window" />
+        <module name="flink-connector" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
       <module name="flink-CEP" target="1.8" />
+      <module name="flink-connector" target="1.8" />
       <module name="flink-note" target="1.8" />
       <module name="flink-streaming-java" target="1.8" />
       <module name="flink-window" target="1.8" />
