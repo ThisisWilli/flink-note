@@ -48,6 +48,7 @@ public class StreamingJob {
 				new Tuple2<>("java", 1),
 				new Tuple2<>("C++", 2))));
 		// execute program
+
 		source.map(Tuple2::_1).returns(Types.STRING).print();
 		env.execute("Flink Streaming Java API Skeleton");
 	}
