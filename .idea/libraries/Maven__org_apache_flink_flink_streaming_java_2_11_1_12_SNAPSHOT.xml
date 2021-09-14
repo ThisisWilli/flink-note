@@ -1,10 +1,10 @@
 <component name="libraryTable">
   <library name="Maven: org.apache.flink:flink-streaming-java_2.11:1.12-SNAPSHOT">
     <CLASSES>
-      <root url="jar://$MAVEN_REPOSITORY$/org/apache/flink/flink-streaming-java_2.11/1.12-SNAPSHOT/flink-streaming-java_2.11-1.12-20200816.034329-100.jar!/" />
+      <root url="jar://$MAVEN_REPOSITORY$/org/apache/flink/flink-streaming-java_2.11/1.12-SNAPSHOT/flink-streaming-java_2.11-1.12-20210913.201004-487.jar!/" />
     </CLASSES>
     <JAVADOC>
-      <root url="jar://$MAVEN_REPOSITORY$/org/apache/flink/flink-streaming-java_2.11/1.12-SNAPSHOT/flink-streaming-java_2.11-1.12-20200816.034329-100-javadoc.jar!/" />
+      <root url="jar://$MAVEN_REPOSITORY$/org/apache/flink/flink-streaming-java_2.11/1.12-SNAPSHOT/flink-streaming-java_2.11-1.12-20210913.201004-487-javadoc.jar!/" />
     </JAVADOC>
     <SOURCES>
       <root url="file://$MAVEN_REPOSITORY$/org/apache/flink/flink-streaming-java_2.11/1.12-SNAPSHOT" />
@@ -244,7 +244,7 @@
       <root url="file://D:/apache-flink/flink-yarn-tests/src/test/java" />
       <root url="file://D:/apache-flink/flink-yarn/src/main/java" />
       <root url="file://D:/apache-flink/flink-yarn/src/test/java" />
-      <root url="jar://$MAVEN_REPOSITORY$/org/apache/flink/flink-streaming-java_2.11/1.12-SNAPSHOT/flink-streaming-java_2.11-1.12-20200816.034329-100-sources.jar!/" />
+      <root url="jar://$MAVEN_REPOSITORY$/org/apache/flink/flink-streaming-java_2.11/1.12-SNAPSHOT/flink-streaming-java_2.11-1.12-20210913.201004-487-sources.jar!/" />
     </SOURCES>
   </library>
 </component>

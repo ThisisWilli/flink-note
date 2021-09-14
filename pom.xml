@@ -25,14 +25,13 @@ under the License.
 	<version>0.0.1</version>
     <modules>
         <module>flink-streaming-java</module>
-		<module>flink-streaming-java</module>
 		<module>flink-window</module>
         <module>flink-CEP</module>
 		<module>flink-connector</module>
 	</modules>
     <packaging>pom</packaging>
 
-	<name>Flink Quickstart Job</name>
+	<name>flink-note</name>
 
 	<properties>
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
@@ -61,12 +60,12 @@ under the License.
 	<dependencies>
 		<!-- Apache Flink dependencies -->
 		<!-- These dependencies are provided, because they should not be packaged into the JAR file. -->
-		<dependency>
-			<groupId>org.apache.flink</groupId>
-			<artifactId>flink-java</artifactId>
-			<version>${flink.version}</version>
-			<scope>provided</scope>
-		</dependency>
+<!--		<dependency>-->
+<!--			<groupId>org.apache.flink</groupId>-->
+<!--			<artifactId>flink-java</artifactId>-->
+<!--			<version>${flink.version}</version>-->
+<!--			<scope>provided</scope>-->
+<!--		</dependency>-->
 		<dependency>
 			<groupId>org.apache.flink</groupId>
 			<artifactId>flink-streaming-java_${scala.binary.version}</artifactId>

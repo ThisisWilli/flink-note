@@ -1,4 +1,4 @@
-package com.willi;
+package com.willi.kafka;
 
 import org.apache.flink.api.common.serialization.SimpleStringSchema;
 import org.apache.flink.streaming.api.datastream.DataStreamSource;

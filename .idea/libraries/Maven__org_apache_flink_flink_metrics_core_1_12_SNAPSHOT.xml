@@ -1,13 +1,13 @@
 <component name="libraryTable">
   <library name="Maven: org.apache.flink:flink-metrics-core:1.12-SNAPSHOT">
     <CLASSES>
-      <root url="jar://$MAVEN_REPOSITORY$/org/apache/flink/flink-metrics-core/1.12-SNAPSHOT/flink-metrics-core-1.12-20200816.033625-104.jar!/" />
+      <root url="jar://$MAVEN_REPOSITORY$/org/apache/flink/flink-metrics-core/1.12-SNAPSHOT/flink-metrics-core-1.12-20210913.204010-872.jar!/" />
     </CLASSES>
     <JAVADOC>
-      <root url="jar://$MAVEN_REPOSITORY$/org/apache/flink/flink-metrics-core/1.12-SNAPSHOT/flink-metrics-core-1.12-20200816.033625-104-javadoc.jar!/" />
+      <root url="jar://$MAVEN_REPOSITORY$/org/apache/flink/flink-metrics-core/1.12-SNAPSHOT/flink-metrics-core-1.12-20210913.204010-872-javadoc.jar!/" />
     </JAVADOC>
     <SOURCES>
-      <root url="jar://$MAVEN_REPOSITORY$/org/apache/flink/flink-metrics-core/1.12-SNAPSHOT/flink-metrics-core-1.12-20200816.033625-104-sources.jar!/" />
+      <root url="jar://$MAVEN_REPOSITORY$/org/apache/flink/flink-metrics-core/1.12-SNAPSHOT/flink-metrics-core-1.12-20210913.204010-872-sources.jar!/" />
     </SOURCES>
   </library>
 </component>

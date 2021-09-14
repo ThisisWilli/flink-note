@@ -1,10 +1,10 @@
 <component name="libraryTable">
   <library name="Maven: org.apache.flink:flink-core:1.12-SNAPSHOT">
     <CLASSES>
-      <root url="jar://$MAVEN_REPOSITORY$/org/apache/flink/flink-core/1.12-SNAPSHOT/flink-core-1.12-20200816.033704-102.jar!/" />
+      <root url="jar://$MAVEN_REPOSITORY$/org/apache/flink/flink-core/1.12-SNAPSHOT/flink-core-1.12-20210913.204050-869.jar!/" />
     </CLASSES>
     <JAVADOC>
-      <root url="jar://$MAVEN_REPOSITORY$/org/apache/flink/flink-core/1.12-SNAPSHOT/flink-core-1.12-20200816.033704-102-javadoc.jar!/" />
+      <root url="jar://$MAVEN_REPOSITORY$/org/apache/flink/flink-core/1.12-SNAPSHOT/flink-core-1.12-20210913.204050-869-javadoc.jar!/" />
     </JAVADOC>
     <SOURCES>
       <root url="file://D:/apache-flink/flink-annotations/src/main/java" />
@@ -241,7 +241,7 @@
       <root url="file://D:/apache-flink/flink-yarn-tests/src/test/java" />
       <root url="file://D:/apache-flink/flink-yarn/src/main/java" />
       <root url="file://D:/apache-flink/flink-yarn/src/test/java" />
-      <root url="jar://$MAVEN_REPOSITORY$/org/apache/flink/flink-core/1.12-SNAPSHOT/flink-core-1.12-20200816.033704-102-sources.jar!/" />
+      <root url="jar://$MAVEN_REPOSITORY$/org/apache/flink/flink-core/1.12-SNAPSHOT/flink-core-1.12-20210913.204050-869-sources.jar!/" />
     </SOURCES>
   </library>
 </component>
